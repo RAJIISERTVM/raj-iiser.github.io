@@ -644,41 +644,84 @@
         </div>
     </section>
 
-    <!-- 7️⃣ CONTACT FORM (FREE & WORKING) -->
-    <section class="container fade-in" id="contact">
+    <!-- 7️⃣ CONTACT FORM (Modern & Professional) -->
+    <section class="container fade-in" id="contact" style="margin-bottom: 100px;">
         <h2 class="section-heading">Get in <span class="gradient-text">Touch</span></h2>
+        
         <div class="contact-container">
-            <!-- Contact Info -->
-            <div>
-                <h3>Connect with Raj</h3>
-                <p style="color: #aaa; margin-bottom: 30px;">Have doubts about the batch? Send a message directly.</p>
+            <!-- Left Side: Social Cards -->
+            <div class="contact-info">
+                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Connect with Raj</h3>
+                <p style="color: #aaa; margin-bottom: 30px;">Have doubts about the batch? Send a message directly or connect via social media.</p>
                 
-                <div style="display:flex; flex-direction:column; gap:20px;">
-                    <a href="mailto:rajrajtanda1@gmail.com" style="color:white; text-decoration:none; display:flex; align-items:center; gap:15px; padding:15px; background:rgba(255,255,255,0.05); border-radius:10px;">
-                        <i class="fas fa-envelope" style="color:var(--primary);"></i> rajrajtanda1@gmail.com
+                <div class="social-grid">
+                    <!-- Email -->
+                    <a href="mailto:rajrajtanda1@gmail.com" class="social-card">
+                        <div class="icon-box" style="background: rgba(168, 85, 247, 0.2); color: #a855f7;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="social-text">
+                            <span>Email Me</span>
+                            <small>rajrajtanda1@gmail.com</small>
+                        </div>
                     </a>
-                    <a href="https://www.youtube.com/@RAJIISERTVM" target="_blank" style="color:white; text-decoration:none; display:flex; align-items:center; gap:15px; padding:15px; background:rgba(255,255,255,0.05); border-radius:10px;">
-                        <i class="fab fa-youtube" style="color:red;"></i> RAJ IISER TVM
+
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/@rajiisrit007" target="_blank" class="social-card">
+                        <div class="icon-box" style="background: rgba(255, 0, 0, 0.15); color: #ff0000;">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="social-text">
+                            <span>YouTube</span>
+                            <small>RAJ IISER TVM</small>
+                        </div>
                     </a>
-                    <a href="#" style="color:white; text-decoration:none; display:flex; align-items:center; gap:15px; padding:15px; background:rgba(255,255,255,0.05); border-radius:10px;">
-                        <i class="fab fa-instagram" style="color:#E1306C;"></i> Instagram (Link Here)
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/rajiiserit007/" target="_blank" class="social-card">
+                        <div class="icon-box" style="background: rgba(225, 48, 108, 0.15); color: #E1306C;">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-text">
+                            <span>Instagram</span>
+                            <small>@rajiiserit007</small>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn (New) -->
+                    <a href="https://www.linkedin.com/in/raj-5b10a02a3" target="_blank" class="social-card">
+                        <div class="icon-box" style="background: rgba(0, 119, 181, 0.15); color: #0077b5;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="social-text">
+                            <span>LinkedIn</span>
+                            <small>Connect Professionally</small>
+                        </div>
                     </a>
                 </div>
             </div>
 
-            <!-- FormSubmit.co Form -->
+            <!-- Right Side: The Form (Your Formspree Link) -->
             <form action="https://formspree.io/f/myzrpdjj" method="POST" class="form-box">
-                <!-- Configuration -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_subject" value="New MentoraX Inquiry!">
-                
                 <!-- Inputs -->
-                <input type="text" name="name" class="form-input" placeholder="Your Name" required>
-                <input type="email" name="email" class="form-input" placeholder="Your Email" required>
-                <textarea name="message" class="form-input" rows="5" placeholder="Your Message" required></textarea>
+                <div class="input-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" class="form-input" placeholder="Enter your full name" required>
+                </div>
                 
-                <button type="submit" class="btn-neon" style="border:none; cursor:pointer; justify-content:center;">Send Message</button>
+                <div class="input-group">
+                    <label>Your Email</label>
+                    <input type="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Your Message</label>
+                    <textarea name="message" class="form-input" rows="5" placeholder="How can I help you?" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-neon" style="border:none; cursor:pointer; justify-content:center; width: 100%; margin-top: 10px;">
+                    Send Message <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+                </button>
             </form>
         </div>
     </section>
