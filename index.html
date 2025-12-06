@@ -271,60 +271,97 @@
         .price-tag { font-size: 4rem; font-weight: 700; color: white; margin: 20px 0; }
         .price-tag span { font-size: 1.2rem; color: var(--text-muted); font-weight: 400; }
 
-        /* 🔷 5. REVIEWS CAROUSEL */
-        .reviews-wrapper {
-            overflow-x: auto;
-            display: flex;
-            gap: 20px;
-            padding-bottom: 30px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--primary) #111;
+        /* 🔷 NEW TESTIMONIAL GRID (Modern SaaS Style) */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            padding: 0 10px;
         }
-        
-       /* 🔷 UPDATED REVIEWS: RAJ FRAME STYLE (Neon Border + Glow) */
-        .review-card {
-            /* 1. Your Requested Dimensions */
-            min-width: 400px;
-            height: 580px;
-            
-            /* 2. The "Raj Photo" Look (Dark + Neon Border) */
-            background: #050507; /* Dark background matching the site */
-            border: 2px solid #a855f7; /* The visible NEON PURPLE border */
-            border-radius: 32px;       /* Large rounded corners */
-            
-            /* 3. The Glow Effect */
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2); /* Soft purple haze */
-            
-            /* 4. Layout */
-            flex-shrink: 0;
+
+        .testimonial-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 32px;
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        /* Hover Effect: Glow & Lift */
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
+                        0 0 20px rgba(168, 85, 247, 0.2);
+        }
+
+        /* Background Quote Icon */
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Stars */
+        .stars {
+            color: #fbbf24; /* Gold Color */
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        /* Review Text */
+        .review-text {
+            color: #d1d5db;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        /* Student Profile Section */
+        .student-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary); /* Default Purple */
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden; /* Keeps the image inside the rounded corners */
-            transition: all 0.4s ease;
-            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
 
-        /* Hover Effect: It pulses brighter when you touch it */
-        .review-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 50px rgba(168, 85, 247, 0.6); /* Brighter Glow */
-            border-color: #fff; /* Border turns white on hover */
+        .student-info h4 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 3px;
         }
-        
-        /* The Image Inside */
-        .review-card img {
-            width: 100%;
-            height: 100%;
-            /* 'cover' makes it fill the frame exactly like your profile photo */
-            object-fit: cover !important; 
-            transition: transform 0.5s ease;
-        }
-        
-        /* Zoom effect on image */
-        .review-card:hover img {
-            transform: scale(1.05);
+
+        .student-info span {
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* 🔷 6. CONTACT FORM (FREE) */
@@ -487,28 +524,106 @@
         </div>
     </section>
 
-    <!-- 5️⃣ REVIEWS -->
-    <section class="container fade-in" style="margin-bottom: 100px;">
-        <h2 class="section-heading">Student <span class="gradient-text">Results</span></h2>
-        <div class="reviews-wrapper">
-            <div class="review-card">
-                 <img src="review1.jpg" alt="Student Review" style="width: 100%; height: 100%; object-fit: contain;">
-                   </div>
-            <div class="review-card">
-            <img src="review2.jpg" alt="Student Review" style="width: 100%; height: 100%; object-fit: contain;">
-                   </div>
-            <div class="review-card">
-            <img src="review3.jpg" alt="Student Review" style="width: 100%; height: 100%; object-fit: contain;">
-                   </div>
-            <div class="review-card">
-            <img src="review4.jpg" alt="Student Review" style="width: 100%; height: 100%; object-fit: contain;">
-                   </div>
-            <div class="review-card">
-            <img src="review5.jpg" alt="Student Review" style="width: 100%; height: 100%; object-fit: contain;">
-                   </div>
-            <div class="review-card">
-            <img src="review6.jpg" alt="Student Review" style="width: 100%; height: 100%; object-fit: contain;">
-                   </div>
+    <!-- 5️⃣ REVIEWS SECTION (New Design) -->
+    <section class="container fade-in" style="margin-bottom: 120px;">
+        <h2 class="section-heading">Student <span class="gradient-text">Success Stories</span></h2>
+        
+        <div class="testimonials-grid">
+            <!-- Review 1 -->
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Seriously bhaiya, bohot hi jyada help kr diya aapne. Thank you so much! Agr is nachiz ke layak koi v kaam ho to bataiyega."</p>
+                <div class="student-profile">
+                    <div class="avatar">S</div>
+                    <div class="student-info">
+                        <h4>Sneha</h4>
+                        <span>IISER Bhopal Aspirant</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Raj Bhaiya, you are truly a super helpful and selfless person. Sirf aapki wajah se aaj main IISER Bhopal tak pahuchi hoon."</p>
+                <div class="student-profile">
+                    <div class="avatar" style="background: #a855f7;">R</div>
+                    <div class="student-info">
+                        <h4>Rahul K.</h4>
+                        <span>IISER Bhopal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"The strategy videos were a game changer. I never thought I could crack the aptitude test until I found MentoraX."</p>
+                <div class="student-profile">
+                    <div class="avatar" style="background: #3b82f6;">A</div>
+                    <div class="student-info">
+                        <h4>Anjali M.</h4>
+                        <span>IISER Mohali</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Accepted and downloaded the offer letter! Thank you for the constant guidance throughout the counselling process."</p>
+                <div class="student-profile">
+                    <div class="avatar" style="background: #e11d48;">V</div>
+                    <div class="student-info">
+                        <h4>Vikram Singh</h4>
+                        <span>IISER Pune</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Sach bolun toh life mein aap jaisa selfless aur genuine insaan pehli baar mila hai. Thank you bhaiya!"</p>
+                <div class="student-profile">
+                    <div class="avatar" style="background: #10b981;">P</div>
+                    <div class="student-info">
+                        <h4>Priya D.</h4>
+                        <span>IISER TVM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 6 -->
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"MentoraX material is strictly to the point. No waste of time, just pure high-yield content for IAT."</p>
+                <div class="student-profile">
+                    <div class="avatar" style="background: #f59e0b;">K</div>
+                    <div class="student-info">
+                        <h4>Karan J.</h4>
+                        <span>IISER Berhampur</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
