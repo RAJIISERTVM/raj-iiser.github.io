@@ -281,11 +281,11 @@
             scrollbar-color: var(--primary) #111;
         }
         
-        /* 🔷 UPDATED REVIEWS: SQUARE & READABLE */
+        /* 🔷 UPDATED REVIEWS: PERFECT SQUARE */
         .review-card {
-            min-width: 350px; /* Square Width */
-            height: 350px;    /* Square Height */
-            background: #000; /* Dark background for letterboxing */
+            min-width: 400px; /* Wider to see text clearly */
+            height: 400px;    /* Same height = Perfect Square */
+            background: #111;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             flex-shrink: 0;
@@ -296,13 +296,12 @@
             overflow: hidden;
             transition: all 0.4s ease;
             cursor: pointer;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Base shadow */
         }
 
-        /* The Neon Glow on Hover */
+        /* Neon Glow */
         .review-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.6); /* Purple Glow */
+            box-shadow: 0 0 35px rgba(168, 85, 247, 0.6);
             border-color: var(--primary);
             z-index: 10;
         }
@@ -310,8 +309,8 @@
         .review-card img {
             width: 100%;
             height: 100%;
-            /* 'contain' ensures the WHOLE image is visible (no zooming) */
-            object-fit: contain !important; 
+            /* COVER is perfect here because Image is Square & Box is Square */
+            object-fit: cover !important; 
             transition: transform 0.5s ease;
         }
 
