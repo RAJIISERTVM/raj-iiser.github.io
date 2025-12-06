@@ -281,58 +281,50 @@
             scrollbar-color: var(--primary) #111;
         }
         
-       /* 🔷 UPDATED REVIEWS: TALL DARK FRAME (400x580) */
+       /* 🔷 UPDATED REVIEWS: RAJ FRAME STYLE (Neon Border + Glow) */
         .review-card {
-            /* 1. YOUR EXACT DIMENSIONS */
+            /* 1. Your Requested Dimensions */
             min-width: 400px;
             height: 580px;
             
-            /* 2. Dark Glassy Background (Fixes the white box issue) */
-            background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* 2. The "Raj Photo" Look (Dark + Neon Border) */
+            background: #050507; /* Dark background matching the site */
+            border: 2px solid #a855f7; /* The visible NEON PURPLE border */
+            border-radius: 32px;       /* Large rounded corners */
             
-            /* 3. The "Frame" Look */
-            border-radius: 32px; /* Apple-style large corners */
-            padding: 20px;       /* The gap between edge and image */
+            /* 3. The Glow Effect */
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2); /* Soft purple haze */
             
             /* 4. Layout */
             flex-shrink: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            
+            justify-content: center;
+            position: relative;
+            overflow: hidden; /* Keeps the image inside the rounded corners */
             transition: all 0.4s ease;
             cursor: pointer;
         }
 
-        /* Hover: Lift & Neon Glow */
+        /* Hover Effect: It pulses brighter when you touch it */
         .review-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 
-                        0 0 40px rgba(168, 85, 247, 0.5); /* Purple Glow */
-            border-color: rgba(168, 85, 247, 0.8);
+            box-shadow: 0 0 50px rgba(168, 85, 247, 0.6); /* Brighter Glow */
+            border-color: #fff; /* Border turns white on hover */
         }
         
-        /* The Image inside */
+        /* The Image Inside */
         .review-card img {
             width: 100%;
-            height: 480px;       /* Tall height to fill the frame */
-            border-radius: 20px; /* Inner rounded corners */
-            object-fit: cover !important; /* Ensures image fills space without stretching */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
+            height: 100%;
+            /* 'cover' makes it fill the frame exactly like your profile photo */
+            object-fit: cover !important; 
+            transition: transform 0.5s ease;
         }
-
-        /* Bottom Text */
-        .review-card::after {
-            content: "Student Success";
-            font-size: 1.1rem;
-            color: #fff;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+        
+        /* Zoom effect on image */
+        .review-card:hover img {
+            transform: scale(1.05);
         }
 
         /* 🔷 6. CONTACT FORM (FREE) */
