@@ -281,37 +281,55 @@
             scrollbar-color: var(--primary) #111;
         }
         
-        /* 🔷 UPDATED REVIEWS: PERFECT SQUARE */
+        /* 🔷 UPDATED REVIEWS: APPLE-STYLE NEON FRAME */
         .review-card {
-            min-width: 400px; /* Wider to see text clearly */
-            height: 400px;    /* Same height = Perfect Square */
-            background: #111;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
+            min-width: 340px;  /* Width of the card */
+            height: 420px;     /* Taller height for text at bottom */
+            
+            /* The "Frame" styling */
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px; /* Large Apple-style rounded corners */
+            padding: 20px;       /* PADDING: Creates the gap between edge and image */
+            
+            /* Layout */
             flex-shrink: 0;
             display: flex; 
-            align-items: center; 
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
+            flex-direction: column; /* Stack image on top of text */
+            justify-content: flex-start; 
+            align-items: center;
+            
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             cursor: pointer;
         }
 
-        /* Neon Glow */
+        /* Hover Effect: Float & Glow */
         .review-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 0 35px rgba(168, 85, 247, 0.6);
-            border-color: var(--primary);
-            z-index: 10;
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 
+                        0 0 30px rgba(168, 85, 247, 0.4); /* Purple Glow */
+            border-color: rgba(168, 85, 247, 0.6);
         }
         
+        /* The Image inside the Frame */
         .review-card img {
             width: 100%;
-            height: 100%;
-            /* COVER is perfect here because Image is Square & Box is Square */
-            object-fit: cover !important; 
-            transition: transform 0.5s ease;
+            border-radius: 20px; /* Inner rounded corners */
+            aspect-ratio: 1/1;   /* Forces image to be square */
+            object-fit: cover !important;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            margin-bottom: 15px; /* Space between image and text */
+        }
+        
+        /* Auto-Text at the bottom (Like an Apple Product Name) */
+        .review-card::after {
+            content: "Student Success"; /* The text that appears below photo */
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         /* 🔷 6. CONTACT FORM (FREE) */
