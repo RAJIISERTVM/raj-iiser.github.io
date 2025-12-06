@@ -281,16 +281,42 @@
             scrollbar-color: var(--primary) #111;
         }
         
+        /* 🔷 UPDATED REVIEWS: GLASSY & GLOWING */
         .review-card {
-            min-width: 320px;
-            height: 450px;
-            background: #111;
+            min-width: 320px; /* Width of a standard phone */
+            height: 480px;    /* Height to fit chat screenshots */
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            border: 1px solid var(--border-color);
             flex-shrink: 0;
-            display: flex; align-items: center; justify-content: center;
-            color: #444;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
             position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+            border-color: var(--primary);
+            z-index: 10;
+        }
+        
+        .review-card img {
+            width: 100%;
+            height: 100%;
+            /* The !important command overrides your old HTML settings */
+            object-fit: cover !important; 
+            transition: transform 0.5s ease;
+        }
+
+        .review-card:hover img {
+            transform: scale(1.05);
         }
 
         /* 🔷 6. CONTACT FORM (FREE) */
